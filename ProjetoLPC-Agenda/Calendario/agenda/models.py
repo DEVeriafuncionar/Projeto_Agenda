@@ -4,8 +4,12 @@ from django.contrib.auth.models import User
 class Agenda(models.Model):
     nome = models.CharField(max_length=128)
     usuario = models.ManyToManyField(User, blank=True, related_name='usuarios')
+    
+    publica = 'Publica'
+    privada = 'Privada'
+    institucional = 'Institucional'
 
-    TIPO_CHOICES = (
+    TIPO_AGENDAS_CHOICES = (
         ('Publica', 'Pública'),
         ('Privada', 'Privada'),
         ('Institucional','Institucional')
