@@ -14,7 +14,7 @@ class Agenda(models.Model):
         ('Privada', 'Privada'),
         ('Institucional','Institucional')
     )
-    tipo = models.CharField(max_length=14, choices=TIPO_CHOICES, blank=False, null=False)
+    tipo = models.CharField(max_length=14, choices=TIPO_AGENDAS_CHOICES, blank=False, null=False)
 
     def __str__(self):
         return self.nome
