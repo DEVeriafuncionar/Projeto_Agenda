@@ -15,8 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.urls import path
+from agenda.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(include('agenda.urls'))
+    path('all/', todasAgendas, name='all'),
+    path('agenda/usuario/<int:([0-9]{1})>/', get_userAgendas_byID),
+    path('compromisso/', agendaInstitucional, name="Institucional")
 ]
